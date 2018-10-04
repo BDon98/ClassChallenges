@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+int MaximumCupCakes (int budget, int price, int wrapper);
+
+int main() {
+
+  int pounds;
+  cout << "How many pounds do you have?" << endl;
+  cin >> pounds;
+  
+  int cost;
+  cout << "How much does a cupcake cost?" << endl;
+  cin >> cost;
+
+  int wrappers;
+  cout << "How many wrappers are needed for a free cupcake" << endl;
+  cin >> wrappers;
+
+  int total = MaximumCupCakes (pounds, cost, wrappers);
+
+  cout << "You can have a maximum of " << total << " cupcakes." << endl;
+}
+
+int MaximumCupCakes (int budget, int price, int wrapper)
+{
+  int paidCupcakes = budget/price;
+  int redeemCupcakes = (paidCupcakes/wrapper);
+  int leftoverWrappers = ((paidCupcakes%wrapper)+redeemCupcakes);
+  if(leftoverWrappers%wrapper == 0)
+  {
+      int totalCupcakes = paidCupcakes+redeemCupcakes+(leftoverWrappers/wrapper);
+  }
+  else{
+    int totalCupcakes = paidCupcakes+redeemCupcakes;
+  }
+
+  return totalCupcakes;
+}
