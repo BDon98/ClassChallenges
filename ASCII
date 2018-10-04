@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main() {
+  char capLetter('A');
+  char lowerLetter('a');
+
+  do{
+    std::cout << capLetter << "\t" << capLetter+0 << "\t" << lowerLetter << "\t" << lowerLetter+0 << std::endl;
+
+    ++lowerLetter;
+    ++capLetter;
+  }while(lowerLetter != 'z'+1);
+}
