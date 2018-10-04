@@ -5,50 +5,8 @@
 using namespace std;
 
 int main() {
-  //Asks the user to enter two words and stores them in strings
-  cout << "Please enter a word:" << endl;
-  string s1;
-  cin >> s1;
-  cout << "Please enter another word:" << endl;
-  string s2;
-  cin >> s2;
-  
-  
-  //turns strings to lowercase
-  transform(s1.begin(), s1.end(),s1.begin(), ::tolower);
-  transform(s2.begin(), s2.end(),s2.begin(), ::tolower);
-
-  //Checks if the words holiday or belize have been entered, if so the user is asked if they are a secret agent
-  if(s1.find("holiday") != -1 || s2.find("holiday") != -1 || s1.find("belize") != -1 || s2.find("belize") != -1)
-  {
-    //asks user if secret agent, stores answer in string
-    cout << "Are you a secret agent, Yes/No?" << endl;
-    string s3;
-    cin >> s3;
-
-    //changes string to lowercase and checks if user said yes, if so they are shot
-    transform(s3.begin(), s3.end(),s3.begin(), ::tolower);
-    if(s3.find("yes") != -1)
-    {
-      cout << "Bang, Bang" << endl;
-    }
-    else
-    {
-      cout << "Me neither ;)" << endl;
-    }
-  }
-  else
-  {
-    //Compares the two strings, if the same then output a message, if not output a different one
-    if(s1==s2)
-    {
-      cout << "This pleases Chuck Norris!" << endl;
-    }
-    else
-    {
-      cout << "I pity the fool" << endl;
-    }
-  }
-
+  string s;
+  cout << "Please enter a camelCase string: " << endl;
+  cin >> s; 
   return 0;
 }
